@@ -1,0 +1,115 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Logo } from "./Logo";
+import { useInterestList } from "@/context/InterestListContext";
+import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { href: "/products", label: "Catalog" },
+  { href: "/categories", label: "Categories" },
+  { href: "/knowledge", label: "Knowledge" },
+];
+
+export function Navbar() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const router = useRouter();
+  const { items } = useInterestList();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery("");
+      setMobileOpen(false);
+    }
+  };
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-brand-border bg-brand-black/95 backdrop-blur">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-4">
+          <Logo />
+          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md mx-8">
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search products..."
+              className="w-full bg-transparent border border-brand-border px-4 py-2 text-sm text-brand-white placeholder:text-brand-grey-400 focus:outline-none focus:border-brand-grey-300"
+            />
+          </form>
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/interest-list"
+              className="relative text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white transition-colors"
+            >
+              My List
+              {items.length > 0 && (
+                <span className="absolute -top-1 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-brand-gold text-brand-black text-xs">
+                  {items.length}
+                </span>
+              )}
+            </Link>
+          </nav>
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden p-2 text-brand-white"
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 h-4 flex flex-col justify-center gap-1">
+              <span className={cn("block w-full h-0.5 bg-current transition-transform", mobileOpen && "rotate-45 translate-y-1.5")} />
+              <span className={cn("block w-full h-0.5 bg-current transition-transform", mobileOpen && "opacity-0")} />
+              <span className={cn("block w-full h-0.5 bg-current transition-transform", mobileOpen && "-rotate-45 -translate-y-1.5")} />
+            </div>
+          </button>
+        </div>
+        {mobileOpen && (
+          <div className="md:hidden py-4 border-t border-brand-border">
+            <form onSubmit={handleSearch} className="mb-4">
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products..."
+                className="w-full bg-transparent border border-brand-border px-4 py-2 text-sm text-brand-white placeholder:text-brand-grey-400 focus:outline-none"
+              />
+            </form>
+            <div className="flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/interest-list"
+                onClick={() => setMobileOpen(false)}
+                className="text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white"
+              >
+                My List {items.length > 0 && `(${items.length})`}
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}

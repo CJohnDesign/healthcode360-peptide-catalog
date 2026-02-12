@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-black: #000000;
+  --brand-white: #fafafa;
+  --brand-grey-300: #888888;
+  --brand-grey-500: #333333;
+  --brand-border: rgba(255, 255, 255, 0.12);
+  --brand-silver-light: #e8e8e8;
+  --brand-silver: #b8b8b8;
+  --brand-silver-dark: #787878;
+  --brand-silver-dim: #585858;
+  --brand-gold-light: #f4d03f;
+  --brand-gold: #d4af37;
+  --brand-gold-dark: #b8860b;
+  --brand-gold-dim: #8b6914;
+}
+
+body {
+  @apply bg-brand-black text-brand-white font-body antialiased;
+}
+
+@layer components {
+  .btn-border-silver {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--brand-black), var(--brand-black)) padding-box,
+      linear-gradient(135deg, #e8e8e8 0%, #b8b8b8 35%, #787878 70%, #b8b8b8 100%) border-box;
+  }
+  .btn-border-gold {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--brand-black), var(--brand-black)) padding-box,
+      linear-gradient(135deg, #f4d03f 0%, #d4af37 40%, #b8860b 80%, #d4af37 100%) border-box;
+  }
+  .btn-border-silver-on-transparent {
+    border: 2px solid transparent;
+    background: linear-gradient(transparent, transparent) padding-box,
+      linear-gradient(135deg, #e8e8e8 0%, #b8b8b8 35%, #787878 70%, #b8b8b8 100%) border-box;
+  }
+  .btn-gold-full {
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 40%, #b8860b 80%, #d4af37 100%) padding-box,
+      linear-gradient(135deg, #f4d03f 0%, #d4af37 40%, #b8860b 80%, #d4af37 100%) border-box;
+  }
+}
