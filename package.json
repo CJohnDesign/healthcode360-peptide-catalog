@@ -9,7 +9,9 @@
     "lint": "next lint",
     "generate:sema-image": "node --env-file=.env scripts/generate-sema-image.mjs",
     "generate:product-images": "node --env-file=.env scripts/generate-all-product-images.mjs",
-    "generate:lifestyle-images": "node --env-file=.env scripts/generate-lifestyle-images.mjs"
+    "generate:lifestyle-images": "node --env-file=.env scripts/generate-lifestyle-images.mjs",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
   },
   "dependencies": {
     "@fal-ai/client": "^1.9.1",
@@ -19,6 +21,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "vercel": "^39.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
