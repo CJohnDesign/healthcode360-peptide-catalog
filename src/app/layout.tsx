@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | HealthCode360",
   },
   description:
-    "Clinical-grade peptide catalog. Browse 26 compounds across weight management, recovery, longevity, and hormonal health. Request inquiries. Provider-guided, precision formulated.",
+    "HealthCode360 peptide catalog. Clinical-grade compounds for weight management, recovery, longevity, and hormonal health. Browse, compare, submit inquiries. Provider-guided, precision formulated.",
   keywords: [
     "peptides",
     "peptide catalog",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "HealthCode360 Peptide Catalog",
     title: "HealthCode360 | Peptide Catalog",
     description:
-      "Clinical-grade peptide catalog. Browse 26 compounds, compare products, submit inquiries. Precision peptides. Elevated outcomes.",
+      "HealthCode360 peptide catalog. Clinical-grade compounds for weight management, recovery, longevity, and hormonal health. Browse, compare, submit inquiries. Precision peptides. Elevated outcomes.",
     images: [
       {
         url: "/images/og-image.png",
@@ -68,7 +68,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "HealthCode360 | Peptide Catalog",
-    description: "Clinical-grade peptide catalog. Browse, compare, submit inquiries. Precision peptides. Elevated outcomes.",
+    description:
+      "HealthCode360 peptide catalog. Clinical-grade compounds for weight management, recovery, longevity, and hormonal health. Browse, compare, submit inquiries. Precision peptides. Elevated outcomes.",
     images: ["/images/og-image.png"],
   },
   robots: {
