@@ -79,7 +79,7 @@ export function EmailCaptureForm({
           className={inputBase}
         />
       </div>
-      <div className="flex gap-4 pt-4">
+      <div className="flex flex-col sm:flex-row gap-4 pt-4">
         <Button
           type="submit"
           variant="primary"

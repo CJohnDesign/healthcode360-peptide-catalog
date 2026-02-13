@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full">
       <PlaceholderImage src="/images/lifestyle/hero.png" aspectRatio="full" label="Hero" context="Vial" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 px-4">
         <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight text-brand-white text-center uppercase">
           Precision Peptides.
           <br />

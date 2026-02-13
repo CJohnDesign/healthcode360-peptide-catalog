@@ -5,7 +5,7 @@ import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2 font-display tracking-wider uppercase transition-all duration-button ease-out focus:outline-none focus:ring-2 focus:ring-brand-gold/60 focus:ring-offset-2 focus:ring-offset-brand-black hover:scale-[1.02] active:scale-[0.98]";
+  "inline-flex items-center justify-center gap-2 font-display tracking-wider uppercase transition-all duration-button ease-out focus:outline-none focus:ring-2 focus:ring-brand-gold/60 focus:ring-offset-2 focus:ring-offset-brand-black hover:scale-[1.02] active:scale-[0.98] touch-manipulation min-h-[44px]";
 
 const variants = {
   primary:
@@ -27,7 +27,7 @@ const variants = {
 };
 
 const sizes = {
-  sm: "px-3 py-1.5 text-caption",
+  sm: "px-3 py-2 text-caption",
   md: "px-4 py-2 text-body-sm",
   lg: "px-8 py-3 text-body-sm tracking-widest",
 };

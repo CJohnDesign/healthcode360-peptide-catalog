@@ -67,7 +67,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-brand-white"
+            className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-brand-white touch-manipulation"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-4 flex flex-col justify-center gap-1">

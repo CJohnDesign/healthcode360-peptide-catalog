@@ -81,7 +81,7 @@ export function InterestListItem({ product, onRemove, className }: InterestListI
             <span>•</span>
             <span>{product.administrationRoute}</span>
           </div>
-          <div className="mt-3 flex items-center gap-1 text-caption text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="mt-3 flex items-center gap-1 text-caption text-brand-gold opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
             View full details
             <ChevronRight className="w-3 h-3" />
           </div>

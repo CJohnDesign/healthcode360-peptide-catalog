@@ -29,17 +29,17 @@ const COMPARE_ROWS = [
 ];
 
 const STICKY_LABEL_CLASS =
-  "sticky left-0 z-10 min-w-[8.5rem] w-[8.5rem] border border-brand-border p-4 text-left bg-brand-black font-display text-label uppercase tracking-widest text-brand-silver";
+  "sticky left-0 z-10 min-w-[8.5rem] w-[8.5rem] border border-brand-border p-3 sm:p-4 text-left bg-brand-black font-display text-label uppercase tracking-widest text-brand-silver";
 
 const PRODUCT_COLUMN_CLASS =
-  "min-w-[13rem] border border-brand-border p-4 text-body-sm text-brand-silver";
+  "min-w-[13rem] border border-brand-border p-3 sm:p-4 text-body-sm text-brand-silver";
 
 const PRODUCT_HEADER_CLASS =
-  "min-w-[13rem] border border-brand-border p-4 text-left";
+  "min-w-[13rem] border border-brand-border p-3 sm:p-4 text-left";
 
 export function CompareTable({ products }: CompareTableProps) {
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto scroll-touch">
       <table className="w-full border-collapse">
         <thead>
           <tr>

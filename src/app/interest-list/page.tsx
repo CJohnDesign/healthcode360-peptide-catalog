@@ -140,7 +140,7 @@ export default function InterestListPage() {
               </div>
             ))}
           </div>
-          <div className="mt-12 flex gap-4 shrink-0">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 shrink-0">
             <Button
               type="button"
               onClick={handleSubmitClick}
@@ -202,7 +202,7 @@ export default function InterestListPage() {
         <p className="text-body-sm text-brand-silver mb-6">
           Your selections will vanish into the void—but you can always add them back. No pressure.
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <Button
             type="button"
             onClick={handleClearList}

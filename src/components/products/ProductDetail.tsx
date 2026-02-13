@@ -92,7 +92,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
                 Strength
               </h3>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 {product.variants.map((v, i) => (
                   <Button
                     key={i}

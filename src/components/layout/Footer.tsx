@@ -3,22 +3,22 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="border-t border-brand-border mt-auto">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-[calc(3rem+env(safe-area-inset-bottom,0px))]">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="font-display text-body-sm tracking-wider uppercase text-brand-silver">
             HealthCode360
           </p>
-          <nav className="flex gap-8">
-            <Link href="/products" className="text-body-sm text-brand-silver hover:text-brand-white transition-colors">
+          <nav className="flex flex-wrap gap-4 md:gap-8">
+            <Link href="/products" className="text-body-sm py-2 min-h-[44px] flex items-center text-brand-silver hover:text-brand-white transition-colors">
               Catalog
             </Link>
-            <Link href="/categories" className="text-body-sm text-brand-silver hover:text-brand-white transition-colors">
+            <Link href="/categories" className="text-body-sm py-2 min-h-[44px] flex items-center text-brand-silver hover:text-brand-white transition-colors">
               Categories
             </Link>
-            <Link href="/knowledge" className="text-body-sm text-brand-silver hover:text-brand-white transition-colors">
+            <Link href="/knowledge" className="text-body-sm py-2 min-h-[44px] flex items-center text-brand-silver hover:text-brand-white transition-colors">
               Knowledge
             </Link>
-            <Link href="/interest-list" className="text-body-sm text-brand-silver hover:text-brand-white transition-colors">
+            <Link href="/interest-list" className="text-body-sm py-2 min-h-[44px] flex items-center text-brand-silver hover:text-brand-white transition-colors">
               My List
             </Link>
           </nav>
