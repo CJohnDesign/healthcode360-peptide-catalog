@@ -1,6 +1,22 @@
-# Product Image Generation
+# Image Generation
 
-Product images are generated using [fal.ai](https://fal.ai) with the **Nano Banana Pro** (`fal-ai/nano-banana-pro`) model.
+All images are generated using [fal.ai](https://fal.ai) with the **Nano Banana Pro** (`fal-ai/nano-banana-pro`) model.
+
+## OG / Social Sharing Image
+
+The Open Graph image (`public/images/og-image.png`) is used for link previews on social platforms (Facebook, Twitter, LinkedIn, etc.).
+
+To regenerate:
+
+```bash
+npm run generate:og-image
+```
+
+Requires `FAL_API_KEY` or `FAL_KEY` in `.env`.
+
+---
+
+## Product Image Generation
 
 ## Generate Sema GLP-1 Image
 

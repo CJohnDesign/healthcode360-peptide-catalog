@@ -10,6 +10,7 @@
     "generate:sema-image": "node --env-file=.env scripts/generate-sema-image.mjs",
     "generate:product-images": "node --env-file=.env scripts/generate-all-product-images.mjs",
     "generate:lifestyle-images": "node --env-file=.env scripts/generate-lifestyle-images.mjs",
+    "generate:og-image": "node --env-file=.env scripts/generate-og-image.mjs",
     "deploy": "vercel --prod",
     "deploy:preview": "vercel"
   },

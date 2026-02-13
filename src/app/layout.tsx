@@ -15,9 +15,66 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
-  title: "HealthCode360 | Peptide Catalog",
-  description: "Precision peptides. Elevated outcomes.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "HealthCode360 | Peptide Catalog",
+    template: "%s | HealthCode360",
+  },
+  description:
+    "Clinical-grade peptide catalog. Browse 26 compounds across weight management, recovery, longevity, and hormonal health. Request inquiries. Provider-guided, precision formulated.",
+  keywords: [
+    "peptides",
+    "peptide catalog",
+    "HealthCode360",
+    "semaglutide",
+    "tirzepatide",
+    "BPC-157",
+    "TB-500",
+    "weight management",
+    "longevity",
+    "growth hormone",
+    "clinical grade",
+  ],
+  authors: [{ name: "HealthCode360" }],
+  creator: "HealthCode360",
+  publisher: "HealthCode360",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "HealthCode360 Peptide Catalog",
+    title: "HealthCode360 | Peptide Catalog",
+    description:
+      "Clinical-grade peptide catalog. Browse 26 compounds, compare products, submit inquiries. Precision peptides. Elevated outcomes.",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "HealthCode360 Peptide Catalog — Precision peptides. Elevated outcomes.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HealthCode360 | Peptide Catalog",
+    description: "Clinical-grade peptide catalog. Browse, compare, submit inquiries. Precision peptides. Elevated outcomes.",
+    images: ["/images/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
