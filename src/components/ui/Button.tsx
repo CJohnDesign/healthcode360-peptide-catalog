@@ -12,6 +12,8 @@ const variants = {
     "btn-border-silver text-brand-silver-light hover:btn-gold-full hover:text-brand-black",
   secondary:
     "btn-border-silver text-brand-silver hover:btn-border-gold hover:text-brand-gold",
+  cta:
+    "btn-gold-full text-brand-black hover:shadow-gold-glow-strong",
   ghost: (selected: boolean) =>
     selected
       ? "text-brand-gold-light"
@@ -40,7 +42,7 @@ const iconSizes = {
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
-  variant?: "primary" | "secondary" | "ghost" | "toggle" | "toggleFilled";
+  variant?: "primary" | "secondary" | "cta" | "ghost" | "toggle" | "toggleFilled";
   size?: "sm" | "md" | "lg";
   icon?: LucideIcon;
   iconPosition?: "left" | "right";
@@ -51,7 +53,7 @@ export interface ButtonProps
 export interface ButtonLinkProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "children"> {
   href: string;
-  variant?: "primary" | "secondary" | "ghost" | "toggle" | "toggleFilled";
+  variant?: "primary" | "secondary" | "cta" | "ghost" | "toggle" | "toggleFilled";
   size?: "sm" | "md" | "lg";
   icon?: LucideIcon;
   iconPosition?: "left" | "right";
@@ -66,6 +68,7 @@ function getVariantClass(
   if (variant === "toggle") return variants.toggle(isSelected);
   if (variant === "toggleFilled") return variants.toggleFilled(isSelected);
   if (variant === "ghost") return variants.ghost(isSelected);
+  if (variant === "cta") return variants.cta;
   return variants[variant ?? "primary"];
 }
 

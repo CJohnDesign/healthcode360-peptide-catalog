@@ -59,6 +59,10 @@ const config: Config = {
       transitionDuration: {
         button: "150ms",
       },
+      boxShadow: {
+        "gold-glow": "0 0 24px rgba(212, 175, 55, 0.35)",
+        "gold-glow-strong": "0 0 32px rgba(212, 175, 55, 0.5)",
+      },
     },
   },
   plugins: [],
