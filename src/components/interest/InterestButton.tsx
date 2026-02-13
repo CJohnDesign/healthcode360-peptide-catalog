@@ -9,10 +9,16 @@ import { cn } from "@/lib/utils";
 interface InterestButtonProps {
   product: Product;
   size?: "sm" | "md";
+  compact?: boolean;
   className?: string;
 }
 
-export function InterestButton({ product, size = "md", className }: InterestButtonProps) {
+export function InterestButton({
+  product,
+  size = "md",
+  compact = false,
+  className,
+}: InterestButtonProps) {
   const { addItem, removeItem, isInList } = useInterestList();
   const inList = isInList(product.slug);
 
@@ -23,13 +29,17 @@ export function InterestButton({ product, size = "md", className }: InterestButt
       type="button"
       onClick={handleClick}
       variant="toggleFilled"
-      size={size}
+      size={compact ? "sm" : size}
       isSelected={inList}
       icon={inList ? Check : Plus}
       iconPosition="left"
-      className={cn("w-full", className)}
+      aria-label={compact ? (inList ? "Remove from list" : "Add to list") : undefined}
+      className={cn(
+        compact ? "w-auto shrink-0 p-2 gap-0" : "w-full",
+        className
+      )}
     >
-      {inList ? "In List" : "Add to List"}
+      {compact ? "" : inList ? "In List" : "Add to List"}
     </Button>
   );
 }

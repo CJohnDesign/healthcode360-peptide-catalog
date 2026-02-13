@@ -21,11 +21,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white mt-8">
         {article.title}
       </h1>
-      <p className="mt-4 text-brand-grey-400">{article.excerpt}</p>
-      <div className="mt-8 text-brand-grey-300 prose prose-invert max-w-none">
+      <p className="mt-4 text-body-sm text-brand-silver">{article.excerpt}</p>
+      <div className="mt-8 text-body-sm text-brand-silver leading-relaxed max-w-none [&>p]:mb-4">
         <p>{article.content}</p>
       </div>
-      <Link href="/knowledge/articles" className="mt-12 inline-block text-brand-grey-400 hover:text-brand-white">
+      <Link href="/knowledge/articles" className="mt-12 inline-block text-body-sm text-brand-silver hover:text-brand-white">
         ← Back to Articles
       </Link>
     </div>

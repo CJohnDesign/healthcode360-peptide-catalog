@@ -18,8 +18,9 @@ const config: Config = {
             300: "#888888",
             400: "#666666",
             500: "#333333",
-          900: "#111111",
-        },
+            600: "#A8A8A8",
+            900: "#111111",
+          },
           border: "rgba(255,255,255,0.12)",
           silver: {
             light: "#E8E8E8",
@@ -48,6 +49,12 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-space-grotesk)", "sans-serif"],
         body: ["var(--font-inter)", "sans-serif"],
+      },
+      fontSize: {
+        body: ["1rem", { lineHeight: "1.6" }],
+        "body-sm": ["0.875rem", { lineHeight: "1.55" }],
+        label: ["0.875rem", { lineHeight: "1.4" }],
+        caption: ["0.8125rem", { lineHeight: "1.45" }],
       },
       transitionDuration: {
         button: "150ms",

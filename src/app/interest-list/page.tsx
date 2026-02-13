@@ -45,7 +45,7 @@ export default function InterestListPage() {
         <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white mb-4">
           My List
         </h1>
-        <p className="text-brand-grey-400 mb-8">
+        <p className="text-body-sm text-brand-silver mb-8">
           Your list is empty. Add products from the catalog to inquire about them.
         </p>
         <ButtonLink
@@ -68,7 +68,7 @@ export default function InterestListPage() {
           <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white">
             My List
           </h1>
-          <p className="text-brand-grey-400 mt-2">
+          <p className="text-body-sm text-brand-silver mt-2">
             Review your selections and submit an inquiry. Switch between list and compare views.
           </p>
         </div>
@@ -113,7 +113,7 @@ export default function InterestListPage() {
       )}
 
       {items.length === 1 && (
-        <p className="text-xs text-brand-grey-500 mb-8">
+        <p className="text-body-sm text-brand-silver-dark mb-8">
           Add 2 or more products to compare them side by side.
         </p>
       )}
@@ -167,7 +167,7 @@ export default function InterestListPage() {
       {view === "compare" && canCompare && (
         <>
           {items.length > 3 && (
-            <p className="text-sm text-brand-grey-500 mb-4">
+            <p className="text-body-sm text-brand-silver-dark mb-4">
               Showing first 3 of {items.length} products.
             </p>
           )}
@@ -189,7 +189,7 @@ export default function InterestListPage() {
       </Modal>
 
       <Modal isOpen={showSuccess} onClose={handleCloseSuccess} title="Inquiry Sent">
-        <p className="text-brand-grey-300">
+        <p className="text-body-sm text-brand-silver">
           Your inquiry has been received. We&apos;ll personally draft your invoice and reach out within 24 hours.
         </p>
         <Link
@@ -206,7 +206,7 @@ export default function InterestListPage() {
         onClose={() => setShowClearConfirm(false)}
         title="Clear your list?"
       >
-        <p className="text-brand-grey-300 mb-6">
+        <p className="text-body-sm text-brand-silver mb-6">
           Your selections will vanish into the void—but you can always add them back. No pressure.
         </p>
         <div className="flex gap-4">

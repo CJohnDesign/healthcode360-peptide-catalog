@@ -50,7 +50,7 @@ export function InterestListItem({ product, onRemove, className }: InterestListI
             <Badge variant={product.isBlend ? "blend" : "default"}>
               {product.category}
             </Badge>
-            <span className="text-xs text-brand-grey-500 font-display uppercase tracking-wider">
+            <span className="text-caption text-brand-silver-dark font-display uppercase tracking-wider">
               {product.medicationClass}
             </span>
           </div>
@@ -58,30 +58,30 @@ export function InterestListItem({ product, onRemove, className }: InterestListI
             {product.name}
           </h2>
           {product.genericName !== product.name && (
-            <p className="mt-0.5 text-sm text-brand-grey-400">
+            <p className="mt-0.5 text-body-sm text-brand-silver">
               {product.genericName}
             </p>
           )}
-          <p className="mt-2 text-sm text-brand-grey-300">
+          <p className="mt-2 text-body-sm text-brand-silver">
             {product.shortDescription}
           </p>
-          <p className="mt-1 text-xs text-brand-grey-500">{product.indications}</p>
+          <p className="mt-1 text-caption text-brand-silver-dark">{product.indications}</p>
           {product.keyBenefits.length > 0 && (
-            <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-brand-grey-400">
+            <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-caption text-brand-silver">
               {product.keyBenefits.slice(0, 4).map((b) => (
                 <li key={b} className="flex items-center gap-1">
-                  <span className="text-brand-grey-600 shrink-0">•</span>
+                  <span className="text-brand-silver-dark shrink-0">•</span>
                   {b}
                 </li>
               ))}
             </ul>
           )}
-          <div className="mt-2 flex items-center gap-1 text-xs text-brand-grey-500">
+          <div className="mt-2 flex items-center gap-1 text-caption text-brand-silver-dark">
             <span>{variantSummary}</span>
             <span>•</span>
             <span>{product.administrationRoute}</span>
           </div>
-          <div className="mt-3 flex items-center gap-1 text-xs text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="mt-3 flex items-center gap-1 text-caption text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity">
             View full details
             <ChevronRight className="w-3 h-3" />
           </div>
@@ -94,7 +94,7 @@ export function InterestListItem({ product, onRemove, className }: InterestListI
         size="sm"
         icon={Trash2}
         iconPosition="left"
-        className="self-start sm:self-center text-xs underline decoration-brand-silver-dark hover:decoration-brand-gold shrink-0"
+        className="self-start sm:self-center text-caption underline decoration-brand-silver-dark hover:decoration-brand-gold shrink-0"
       >
         Remove
       </Button>

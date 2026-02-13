@@ -20,7 +20,7 @@ export function FilterSidebar({
   return (
     <aside className="space-y-8">
       <div>
-        <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-4">
+        <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-4">
           Category
         </h3>
         <ul className="space-y-1">
@@ -57,13 +57,13 @@ export function FilterSidebar({
         </ul>
       </div>
       <div>
-        <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-4">
+        <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-4">
           Sort
         </h3>
         <select
           value={sortBy}
           onChange={(e) => onSortChange(e.target.value)}
-          className="w-full bg-transparent border border-brand-border px-4 py-2 text-sm text-brand-white focus:outline-none focus:border-brand-grey-500"
+          className="w-full bg-transparent border border-brand-border px-4 py-2 text-body-sm text-brand-white focus:outline-none focus:border-brand-grey-500"
         >
           <option value="name">A–Z</option>
           <option value="category">Category</option>

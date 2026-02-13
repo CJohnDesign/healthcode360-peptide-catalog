@@ -19,7 +19,7 @@ function SearchResultsInner() {
 
   if (!q) {
     return (
-      <div className="py-16 text-center text-brand-grey-400">
+      <div className="py-16 text-center text-body-sm text-brand-silver">
         <p>Enter a search term to find products, articles, and glossary terms.</p>
       </div>
     );
@@ -34,7 +34,7 @@ function SearchResultsInner() {
 
   if (!hasResults) {
     return (
-      <div className="py-16 text-center text-brand-grey-400">
+      <div className="py-16 text-center text-body-sm text-brand-silver">
         <p>No results for &quot;{q}&quot;.</p>
       </div>
     );
@@ -44,7 +44,7 @@ function SearchResultsInner() {
     <div className="space-y-12">
       {results.products.length > 0 && (
         <section>
-          <h2 className="font-display text-sm uppercase tracking-widest text-brand-grey-400 mb-4">
+          <h2 className="font-display text-body-sm uppercase tracking-widest text-brand-silver mb-4">
             Products ({results.products.length})
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -55,8 +55,8 @@ function SearchResultsInner() {
                 className="block border border-brand-border p-4 hover:border-brand-grey-500 transition-colors"
               >
                 <Badge className="mb-2">{p.category}</Badge>
-                <h3 className="font-display text-sm uppercase text-brand-white">{p.name}</h3>
-                <p className="mt-1 text-xs text-brand-grey-500 line-clamp-2">{p.shortDescription}</p>
+                <h3 className="font-display text-body-sm uppercase text-brand-white">{p.name}</h3>
+                <p className="mt-1 text-caption text-brand-silver-dark line-clamp-2">{p.shortDescription}</p>
               </Link>
             ))}
           </div>
@@ -64,7 +64,7 @@ function SearchResultsInner() {
       )}
       {results.articles.length > 0 && (
         <section>
-          <h2 className="font-display text-sm uppercase tracking-widest text-brand-grey-400 mb-4">
+          <h2 className="font-display text-body-sm uppercase tracking-widest text-brand-silver mb-4">
             Articles ({results.articles.length})
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -74,8 +74,8 @@ function SearchResultsInner() {
                 href={`/knowledge/articles/${a.slug}`}
                 className="block border border-brand-border p-4 hover:border-brand-grey-500 transition-colors"
               >
-                <h3 className="font-display text-sm uppercase text-brand-white">{a.title}</h3>
-                <p className="mt-1 text-xs text-brand-grey-500 line-clamp-2">{a.excerpt}</p>
+                <h3 className="font-display text-body-sm uppercase text-brand-white">{a.title}</h3>
+                <p className="mt-1 text-caption text-brand-silver-dark line-clamp-2">{a.excerpt}</p>
               </Link>
             ))}
           </div>
@@ -83,7 +83,7 @@ function SearchResultsInner() {
       )}
       {results.glossary.length > 0 && (
         <section>
-          <h2 className="font-display text-sm uppercase tracking-widest text-brand-grey-400 mb-4">
+          <h2 className="font-display text-body-sm uppercase tracking-widest text-brand-silver mb-4">
             Glossary ({results.glossary.length})
           </h2>
           <ul className="space-y-3">
@@ -93,8 +93,8 @@ function SearchResultsInner() {
                   href={`/knowledge/glossary#${g.slug}`}
                   className="block border border-brand-border p-4 hover:border-brand-grey-500 transition-colors"
                 >
-                  <span className="font-display text-sm uppercase text-brand-white">{g.term}</span>
-                  <p className="mt-1 text-xs text-brand-grey-500">{g.definition}</p>
+                  <span className="font-display text-body-sm uppercase text-brand-white">{g.term}</span>
+                  <p className="mt-1 text-caption text-brand-silver-dark">{g.definition}</p>
                 </Link>
               </li>
             ))}
@@ -111,7 +111,7 @@ export default function SearchPage() {
       <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white mb-8">
         Search
       </h1>
-      <Suspense fallback={<div className="text-brand-grey-400">Loading...</div>}>
+      <Suspense fallback={<div className="text-body-sm text-brand-silver">Loading...</div>}>
         <SearchResultsInner />
       </Suspense>
     </div>

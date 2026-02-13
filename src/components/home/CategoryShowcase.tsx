@@ -23,13 +23,13 @@ export function CategoryShowcase() {
                 context={cat.name}
               />
               <div className="p-4">
-                <h3 className="font-display text-sm uppercase tracking-wider text-brand-white group-hover:opacity-80">
+                <h3 className="font-display text-body-sm uppercase tracking-wider text-brand-white group-hover:opacity-80">
                   {cat.name}
                 </h3>
-                <p className="mt-2 text-xs text-brand-grey-400 line-clamp-2">
+                <p className="mt-2 text-caption text-brand-silver line-clamp-2">
                   {cat.description}
                 </p>
-                <span className="mt-2 inline-block text-xs text-brand-grey-300 underline underline-offset-2">
+                <span className="mt-2 inline-block text-caption text-brand-silver underline underline-offset-2">
                   {cat.productCount} products
                 </span>
               </div>

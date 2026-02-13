@@ -102,15 +102,15 @@ export function PlaceholderImage({
 
   return (
     <div className={containerClass} role="img" aria-label={label || "Placeholder image"}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-brand-grey-300">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-brand-silver">
         <VialSvg />
         {label && (
-          <span className="mt-2 text-xs font-display tracking-widest uppercase opacity-60">
+          <span className="mt-2 text-caption font-display tracking-widest uppercase opacity-70">
             {label}
           </span>
         )}
         {context && !label && (
-          <span className="mt-2 text-xs font-display tracking-widest uppercase opacity-40">
+          <span className="mt-2 text-caption font-display tracking-widest uppercase opacity-60">
             {context}
           </span>
         )}

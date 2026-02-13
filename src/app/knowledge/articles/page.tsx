@@ -17,10 +17,10 @@ export default function ArticlesPage() {
           >
             <PlaceholderImage src={a.image} aspectRatio="4/3" label={a.title} />
             <div className="p-4">
-              <h2 className="font-display text-sm uppercase tracking-wider text-brand-white">
+              <h2 className="font-display text-body-sm uppercase tracking-wider text-brand-white">
                 {a.title}
               </h2>
-              <p className="mt-2 text-xs text-brand-grey-500 line-clamp-2">{a.excerpt}</p>
+              <p className="mt-2 text-caption text-brand-silver-dark line-clamp-2">{a.excerpt}</p>
             </div>
           </Link>
         ))}

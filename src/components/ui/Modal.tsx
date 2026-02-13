@@ -38,7 +38,7 @@ export function Modal({ isOpen, onClose, title, children, className }: ModalProp
         onClick={(e) => e.stopPropagation()}
       >
         {title && (
-          <h3 className="font-display text-lg uppercase tracking-wider mb-4">
+          <h3 className="font-display text-xl uppercase tracking-wider mb-4">
             {title}
           </h3>
         )}

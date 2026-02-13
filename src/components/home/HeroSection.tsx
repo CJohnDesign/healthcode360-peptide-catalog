@@ -14,7 +14,7 @@ export function HeroSection() {
           <br />
           Elevated Outcomes.
         </h1>
-        <p className="mt-4 text-brand-grey-300 text-center max-w-md">
+        <p className="mt-4 text-body-sm text-brand-silver text-center max-w-md">
           Clinical-grade compounds for weight management, recovery, longevity, and beyond.
         </p>
         <ButtonLink

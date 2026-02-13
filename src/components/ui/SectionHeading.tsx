@@ -13,7 +13,7 @@ export function SectionHeading({ title, subtitle, className }: SectionHeadingPro
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-2 text-brand-grey-300 text-sm md:text-base max-w-2xl mx-auto">
+        <p className="mt-2 text-brand-silver text-body-sm md:text-body max-w-2xl mx-auto">
           {subtitle}
         </p>
       )}

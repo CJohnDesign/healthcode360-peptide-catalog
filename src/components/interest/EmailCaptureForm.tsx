@@ -18,7 +18,7 @@ interface EmailCaptureFormProps {
 }
 
 const inputBase =
-  "w-full bg-transparent border border-brand-border px-4 py-2 text-sm text-brand-white placeholder:text-brand-grey-400 focus:outline-none focus:border-brand-grey-400 transition-colors";
+  "w-full bg-transparent border border-brand-border px-4 py-2 text-body-sm text-brand-white placeholder:text-brand-silver-dark focus:outline-none focus:border-brand-silver-dark transition-colors";
 
 export function EmailCaptureForm({
   onSubmit,
@@ -37,11 +37,11 @@ export function EmailCaptureForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <p className="text-sm text-brand-grey-400 mb-6">
+      <p className="text-body-sm text-brand-silver mb-6">
         {introMessage}
       </p>
       <div>
-        <label htmlFor="name" className="block text-xs font-display tracking-wider uppercase text-brand-grey-400 mb-1">
+        <label htmlFor="name" className="block text-label font-display tracking-wider uppercase text-brand-silver mb-1">
           Name
         </label>
         <input
@@ -54,7 +54,7 @@ export function EmailCaptureForm({
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-xs font-display tracking-wider uppercase text-brand-grey-400 mb-1">
+        <label htmlFor="email" className="block text-label font-display tracking-wider uppercase text-brand-silver mb-1">
           Email
         </label>
         <input
@@ -67,8 +67,8 @@ export function EmailCaptureForm({
         />
       </div>
       <div>
-        <label htmlFor="phone" className="block text-xs font-display tracking-wider uppercase text-brand-grey-400 mb-1">
-          Phone <span className="text-brand-grey-500">(optional)</span>
+        <label htmlFor="phone" className="block text-label font-display tracking-wider uppercase text-brand-silver mb-1">
+          Phone <span className="text-brand-silver-dark">(optional)</span>
         </label>
         <input
           id="phone"

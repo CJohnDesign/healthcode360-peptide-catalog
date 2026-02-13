@@ -8,7 +8,7 @@ export default function CategoriesPage() {
       <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white mb-4">
         Categories
       </h1>
-      <p className="text-brand-grey-400 mb-12 max-w-2xl">
+      <p className="text-body-sm text-brand-silver mb-12 max-w-2xl">
         Explore our peptide catalog by therapeutic area.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -23,10 +23,10 @@ export default function CategoriesPage() {
               <h2 className="font-display text-lg uppercase tracking-wider text-brand-white group-hover:opacity-80">
                 {cat.name}
               </h2>
-              <p className="mt-2 text-sm text-brand-grey-400 line-clamp-2">
+              <p className="mt-2 text-body-sm text-brand-silver line-clamp-2">
                 {cat.description}
               </p>
-              <span className="mt-4 inline-block text-sm text-brand-grey-300 underline underline-offset-2">
+              <span className="mt-4 inline-block text-body-sm text-brand-silver underline underline-offset-2">
                 View {cat.productCount} products →
               </span>
             </div>

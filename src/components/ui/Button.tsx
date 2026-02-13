@@ -27,9 +27,9 @@ const variants = {
 };
 
 const sizes = {
-  sm: "px-3 py-1.5 text-xs",
-  md: "px-4 py-2 text-sm",
-  lg: "px-8 py-3 text-sm tracking-widest",
+  sm: "px-3 py-1.5 text-caption",
+  md: "px-4 py-2 text-body-sm",
+  lg: "px-8 py-3 text-body-sm tracking-widest",
 };
 
 const iconSizes = {

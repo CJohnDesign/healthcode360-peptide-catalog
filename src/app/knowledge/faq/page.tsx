@@ -20,13 +20,13 @@ export default function FAQPage() {
             <button
               type="button"
               onClick={() => setOpenId(openId === item.id ? null : item.id)}
-              className="w-full flex items-center justify-between p-4 text-left font-display text-sm uppercase tracking-wider text-brand-white hover:bg-brand-grey-900 transition-colors"
+              className="w-full flex items-center justify-between p-4 text-left font-display text-body-sm uppercase tracking-wider text-brand-white hover:bg-brand-grey-900 transition-colors"
             >
               {item.question}
-              <span className="text-brand-grey-500">{openId === item.id ? "−" : "+"}</span>
+              <span className="text-brand-silver-dark">{openId === item.id ? "−" : "+"}</span>
             </button>
             {openId === item.id && (
-              <div className="px-4 py-4 text-sm text-brand-grey-400 border-t border-brand-border">
+              <div className="px-4 py-4 text-body-sm text-brand-silver border-t border-brand-border">
                 {item.answer}
               </div>
             )}

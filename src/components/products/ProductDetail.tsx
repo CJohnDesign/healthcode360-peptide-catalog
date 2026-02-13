@@ -29,24 +29,26 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
 
   return (
     <article>
-      <Breadcrumb
-        items={[
-          { label: "Catalog", href: "/products" },
-          { label: product.category, href: `/categories/${product.categorySlug}` },
-          { label: product.name },
-        ]}
-      />
-      <div className="mt-6">
-        <PlaceholderImage
-          src={product.image}
-          aspectRatio="16/9"
-          label={product.name}
-          priority
-          sizes="(max-width: 1024px) 100vw, 66vw"
+      <div className="flex items-center justify-between gap-4">
+        <Breadcrumb
+          items={[
+            { label: "Catalog", href: "/products" },
+            { label: product.category, href: `/categories/${product.categorySlug}` },
+            { label: product.name },
+          ]}
         />
+        <InterestButton product={product} compact />
       </div>
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
+          <PlaceholderImage
+            src={product.image}
+            aspectRatio="16/9"
+            label={product.name}
+            priority
+            sizes="(max-width: 1024px) 100vw, 66vw"
+            className="mb-6"
+          />
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant={product.isBlend ? "blend" : "default"}>{product.category}</Badge>
           </div>
@@ -54,31 +56,31 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
             {product.name}
           </h1>
           {product.genericName !== product.name && (
-            <p className="mt-2 text-brand-grey-400">{product.genericName}</p>
+            <p className="mt-2 text-body-sm text-brand-silver">{product.genericName}</p>
           )}
-          <p className="mt-2 text-xs font-display tracking-wider uppercase text-brand-grey-500">
+          <p className="mt-2 text-caption font-display tracking-wider uppercase text-brand-silver-dark">
             {product.medicationClass}
           </p>
-          <p className="mt-4 text-brand-grey-300">{product.fullDescription}</p>
+          <p className="mt-4 text-body-sm text-brand-silver leading-relaxed">{product.fullDescription}</p>
           <div className="mt-4">
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-1">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-1">
               Indications
             </h3>
-            <p className="text-sm text-brand-grey-300">{product.indications}</p>
+            <p className="text-body-sm text-brand-silver">{product.indications}</p>
           </div>
           <ul className="mt-6 space-y-2">
             {product.keyBenefits.map((b) => (
-              <li key={b} className="flex items-start gap-2 text-sm text-brand-grey-300">
-                <span className="text-brand-grey-500">—</span> {b}
+              <li key={b} className="flex items-start gap-2 text-body-sm text-brand-silver">
+                <span className="text-brand-silver-dark">—</span> {b}
               </li>
             ))}
           </ul>
           {product.isBlend && product.blendComponents && (
             <div className="mt-6">
-              <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+              <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
                 Blend Components
               </h3>
-              <p className="text-sm text-brand-grey-300">
+              <p className="text-body-sm text-brand-silver">
                 {product.blendComponents.join(", ")}
               </p>
             </div>
@@ -87,7 +89,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
         <div className="space-y-6">
           {product.variants.length > 1 && (
             <div>
-              <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+              <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
                 Strength
               </h3>
               <div className="flex gap-2">
@@ -109,82 +111,82 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
             </div>
           )}
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Medication Details
             </h3>
-            <p className="text-xs text-brand-grey-500">{variant.vialSize} vial</p>
-            <p className="mt-1 text-xs text-brand-grey-500">
+            <p className="text-caption text-brand-silver-dark">{variant.vialSize} vial</p>
+            <p className="mt-1 text-caption text-brand-silver-dark">
               Concentration: {variant.concentration}
             </p>
             {variant.reconstitutionVolume && (
-              <p className="mt-1 text-xs text-brand-grey-500">
+              <p className="mt-1 text-caption text-brand-silver-dark">
                 Bacteriostatic Water {variant.reconstitutionVolume}
               </p>
             )}
           </div>
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Dosing
             </h3>
-            <p className="text-sm text-brand-grey-300">{variant.schedule}</p>
+            <p className="text-body-sm text-brand-silver">{variant.schedule}</p>
           </div>
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Administration
             </h3>
-            <p className="text-sm text-brand-grey-300">{product.administrationRoute}</p>
+            <p className="text-body-sm text-brand-silver">{product.administrationRoute}</p>
             {product.injectionNote && (
-              <p className="mt-2 text-xs text-brand-grey-500 border-l-2 border-brand-grey-500 pl-3">
+              <p className="mt-2 text-caption text-brand-silver-dark border-l-2 border-brand-silver-dark pl-3">
                 {product.injectionNote}
               </p>
             )}
           </div>
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Injection Technique
             </h3>
             <ul className="space-y-1">
               {(product.injectionTechnique ?? IFU_DEFAULTS.injectionTechnique).map((step) => (
-                <li key={step} className="text-xs text-brand-grey-500 flex items-start gap-2">
-                  <span className="text-brand-grey-500 shrink-0">•</span> {step}
+                <li key={step} className="text-caption text-brand-silver-dark flex items-start gap-2">
+                  <span className="text-brand-silver-dark shrink-0">•</span> {step}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Missed Dose
             </h3>
             <ul className="space-y-1">
               {(product.missedDose ?? IFU_DEFAULTS.missedDose).map((item) => (
-                <li key={item} className="text-xs text-brand-grey-500 flex items-start gap-2">
-                  <span className="text-brand-grey-500 shrink-0">•</span> {item}
+<li key={item} className="text-caption text-brand-silver-dark flex items-start gap-2">
+                <span className="text-brand-silver-dark shrink-0">•</span> {item}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Storage & Handling
             </h3>
-            <p className="text-xs text-brand-grey-500">{IFU_DEFAULTS.storage}</p>
+            <p className="text-caption text-brand-silver-dark">{IFU_DEFAULTS.storage}</p>
           </div>
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Notes
             </h3>
-            <p className="text-sm text-brand-grey-300">{product.clinicalNotes}</p>
+            <p className="text-body-sm text-brand-silver">{product.clinicalNotes}</p>
             {product.providerNote && (
-              <p className="mt-2 text-xs text-brand-grey-500">{product.providerNote}</p>
+              <p className="mt-2 text-caption text-brand-silver-dark">{product.providerNote}</p>
             )}
           </div>
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-brand-grey-400 mb-2">
+            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Disclaimer
             </h3>
-            <p className="text-xs text-brand-grey-500 italic">{IFU_DEFAULTS.disclaimer}</p>
+            <p className="text-caption text-brand-silver-dark italic">{IFU_DEFAULTS.disclaimer}</p>
           </div>
-          <p className="text-xs text-brand-grey-500">{IFU_DEFAULTS.effectiveDate}</p>
+          <p className="text-caption text-brand-silver-dark">{IFU_DEFAULTS.effectiveDate}</p>
           <InterestButton product={product} className="mt-4" />
         </div>
       </div>
@@ -200,10 +202,10 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 href={`/products/${p.slug}`}
                 className="block border border-brand-border p-4 hover:border-brand-grey-500 transition-colors"
               >
-                <p className="font-display text-sm uppercase tracking-wider text-brand-white">
+                <p className="font-display text-body-sm uppercase tracking-wider text-brand-white">
                   {p.name}
                 </p>
-                <p className="mt-1 text-xs text-brand-grey-500">{p.shortDescription}</p>
+                <p className="mt-1 text-caption text-brand-silver-dark">{p.shortDescription}</p>
               </Link>
             ))}
           </div>

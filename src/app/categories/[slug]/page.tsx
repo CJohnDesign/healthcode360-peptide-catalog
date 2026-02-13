@@ -30,7 +30,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
         <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white">
           {category.name}
         </h1>
-        <p className="mt-4 text-brand-grey-400 max-w-2xl">{category.description}</p>
+        <p className="mt-4 text-body-sm text-brand-silver max-w-2xl">{category.description}</p>
       </div>
       <div className="mt-12">
         <ProductGrid products={categoryProducts} />

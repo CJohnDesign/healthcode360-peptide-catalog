@@ -20,10 +20,10 @@ function ProductCard({ product, priority }: { product: Product; priority?: boole
         />
         <div className="p-4">
           <Badge className="mb-2">{product.category}</Badge>
-          <h3 className="font-display text-sm uppercase tracking-wider text-brand-white group-hover:opacity-80">
+          <h3 className="font-display text-body-sm uppercase tracking-wider text-brand-white group-hover:opacity-80">
             {product.name}
           </h3>
-          <p className="mt-1 text-xs text-brand-grey-400 line-clamp-2">{product.shortDescription}</p>
+          <p className="mt-1 text-caption text-brand-silver line-clamp-2">{product.shortDescription}</p>
         </div>
       </Link>
       <div className="px-4 pb-4">

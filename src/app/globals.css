@@ -18,8 +18,14 @@
   --brand-gold-dim: #8b6914;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   @apply bg-brand-black text-brand-white font-body antialiased;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 @layer components {

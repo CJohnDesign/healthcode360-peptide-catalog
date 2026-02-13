@@ -39,7 +39,7 @@ export function Navbar() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search products..."
-              className="w-full bg-transparent border border-brand-border px-4 py-2 text-sm text-brand-white placeholder:text-brand-grey-400 focus:outline-none focus:border-brand-grey-300"
+              className="w-full bg-transparent border border-brand-border px-4 py-2 text-body-sm text-brand-white placeholder:text-brand-silver-dark focus:outline-none focus:border-brand-grey-300"
             />
           </form>
           <nav className="hidden md:flex items-center gap-6">
@@ -47,18 +47,18 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white transition-colors"
+                className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/interest-list"
-              className="relative text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white transition-colors"
+              className="relative text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white transition-colors"
             >
               My List
               {items.length > 0 && (
-                <span className="absolute -top-1 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-brand-gold text-brand-black text-xs">
+                <span className="absolute -top-1 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-brand-gold text-brand-black text-caption">
                   {items.length}
                 </span>
               )}
@@ -85,7 +85,7 @@ export function Navbar() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products..."
-                className="w-full bg-transparent border border-brand-border px-4 py-2 text-sm text-brand-white placeholder:text-brand-grey-400 focus:outline-none"
+                className="w-full bg-transparent border border-brand-border px-4 py-2 text-body-sm text-brand-white placeholder:text-brand-silver-dark focus:outline-none"
               />
             </form>
             <div className="flex flex-col gap-2">
@@ -94,7 +94,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white"
+                  className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white"
                 >
                   {link.label}
                 </Link>
@@ -102,7 +102,7 @@ export function Navbar() {
               <Link
                 href="/interest-list"
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-display tracking-wider uppercase text-brand-grey-300 hover:text-brand-white"
+                className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white"
               >
                 My List {items.length > 0 && `(${items.length})`}
               </Link>

@@ -11,10 +11,10 @@ export default function GlossaryPage() {
       <ul className="space-y-6">
         {sorted.map((term) => (
           <li key={term.slug} id={term.slug} className="border-b border-brand-border pb-6">
-            <h2 className="font-display text-sm uppercase tracking-wider text-brand-white">
+            <h2 className="font-display text-body-sm uppercase tracking-wider text-brand-white">
               {term.term}
             </h2>
-            <p className="mt-2 text-sm text-brand-grey-400">{term.definition}</p>
+            <p className="mt-2 text-body-sm text-brand-silver">{term.definition}</p>
           </li>
         ))}
       </ul>

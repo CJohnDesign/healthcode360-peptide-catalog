@@ -14,10 +14,10 @@ export function ValueProps() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {props.map((p) => (
             <div key={p.title} className="text-center">
-              <h3 className="font-display text-sm uppercase tracking-widest text-brand-white">
+              <h3 className="font-display text-body-sm uppercase tracking-widest text-brand-white">
                 {p.title}
               </h3>
-              <p className="mt-2 text-sm text-brand-grey-400">{p.desc}</p>
+              <p className="mt-2 text-body-sm text-brand-silver">{p.desc}</p>
             </div>
           ))}
         </div>

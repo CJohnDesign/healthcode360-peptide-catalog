@@ -6,7 +6,7 @@ export default function KnowledgePage() {
       <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white mb-4">
         Knowledge Base
       </h1>
-      <p className="text-brand-grey-400 mb-12 max-w-2xl">
+      <p className="text-body-sm text-brand-silver mb-12 max-w-2xl">
         FAQ, educational articles, and a glossary of peptide terms.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -15,7 +15,7 @@ export default function KnowledgePage() {
           className="block border border-brand-border p-8 hover:border-brand-grey-500 transition-colors"
         >
           <h2 className="font-display text-lg uppercase tracking-wider text-brand-white">FAQ</h2>
-          <p className="mt-2 text-sm text-brand-grey-400">
+          <p className="mt-2 text-body-sm text-brand-silver">
             Common questions about peptides, storage, and protocols.
           </p>
         </Link>
@@ -24,7 +24,7 @@ export default function KnowledgePage() {
           className="block border border-brand-border p-8 hover:border-brand-grey-500 transition-colors"
         >
           <h2 className="font-display text-lg uppercase tracking-wider text-brand-white">Articles</h2>
-          <p className="mt-2 text-sm text-brand-grey-400">
+          <p className="mt-2 text-body-sm text-brand-silver">
             Educational content on how peptides work and best practices.
           </p>
         </Link>
@@ -33,7 +33,7 @@ export default function KnowledgePage() {
           className="block border border-brand-border p-8 hover:border-brand-grey-500 transition-colors"
         >
           <h2 className="font-display text-lg uppercase tracking-wider text-brand-white">Glossary</h2>
-          <p className="mt-2 text-sm text-brand-grey-400">
+          <p className="mt-2 text-body-sm text-brand-silver">
             A–Z definitions of peptide and medical terms.
           </p>
         </Link>

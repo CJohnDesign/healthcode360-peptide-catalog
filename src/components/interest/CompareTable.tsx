@@ -37,7 +37,7 @@ export function CompareTable({ products }: CompareTableProps) {
       <table className="w-full border-collapse">
         <thead>
           <tr>
-            <th className="border border-brand-border p-4 text-left font-display text-xs uppercase tracking-widest text-brand-grey-400 w-40">
+            <th className="border border-brand-border p-4 text-left font-display text-label uppercase tracking-widest text-brand-silver w-40">
               —
             </th>
             {toCompare.map((p) => (
@@ -58,13 +58,13 @@ export function CompareTable({ products }: CompareTableProps) {
         <tbody>
           {COMPARE_ROWS.map((row) => (
             <tr key={row.key}>
-              <td className="border border-brand-border p-4 font-display text-xs uppercase tracking-widest text-brand-grey-400">
+              <td className="border border-brand-border p-4 font-display text-label uppercase tracking-widest text-brand-silver">
                 {row.key}
               </td>
               {toCompare.map((p) => (
                 <td
                   key={p.slug}
-                  className="border border-brand-border p-4 text-sm text-brand-grey-300"
+                  className="border border-brand-border p-4 text-body-sm text-brand-silver"
                 >
                   {row.get(p)}
                 </td>
