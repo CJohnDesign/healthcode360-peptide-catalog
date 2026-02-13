@@ -165,14 +165,7 @@ export default function InterestListPage() {
       )}
 
       {view === "compare" && canCompare && (
-        <>
-          {items.length > 3 && (
-            <p className="text-body-sm text-brand-silver-dark mb-4">
-              Showing first 3 of {items.length} products.
-            </p>
-          )}
-          <CompareTable products={items} />
-        </>
+        <CompareTable products={items} />
       )}
 
       <Modal

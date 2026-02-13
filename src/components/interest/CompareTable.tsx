@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { InterestButton } from "./InterestButton";
 import type { Product } from "@/types";
 
 interface CompareTableProps {
@@ -29,28 +28,30 @@ const COMPARE_ROWS = [
   { key: "Blend", get: (p: Product) => (p.blendComponents ?? []).join(", ") || "—" },
 ];
 
-export function CompareTable({ products }: CompareTableProps) {
-  const toCompare = products.slice(0, 3);
+const STICKY_LABEL_CLASS =
+  "sticky left-0 z-10 min-w-[8.5rem] w-[8.5rem] border border-brand-border p-4 text-left bg-brand-black font-display text-label uppercase tracking-widest text-brand-silver";
 
+const PRODUCT_COLUMN_CLASS =
+  "min-w-[13rem] border border-brand-border p-4 text-body-sm text-brand-silver";
+
+const PRODUCT_HEADER_CLASS =
+  "min-w-[13rem] border border-brand-border p-4 text-left";
+
+export function CompareTable({ products }: CompareTableProps) {
   return (
     <div className="overflow-x-auto">
       <table className="w-full border-collapse">
         <thead>
           <tr>
-            <th className="border border-brand-border p-4 text-left font-display text-label uppercase tracking-widest text-brand-silver w-40">
-              —
-            </th>
-            {toCompare.map((p) => (
-              <th key={p.slug} className="border border-brand-border p-4 text-left">
+            <th className={STICKY_LABEL_CLASS}>—</th>
+            {products.map((p) => (
+              <th key={p.slug} className={PRODUCT_HEADER_CLASS}>
                 <Link
                   href={`/products/${p.slug}`}
                   className="font-display text-sm uppercase text-brand-white hover:opacity-80"
                 >
                   {p.name}
                 </Link>
-                <div className="mt-2">
-                  <InterestButton product={p} size="sm" />
-                </div>
               </th>
             ))}
           </tr>
@@ -58,14 +59,9 @@ export function CompareTable({ products }: CompareTableProps) {
         <tbody>
           {COMPARE_ROWS.map((row) => (
             <tr key={row.key}>
-              <td className="border border-brand-border p-4 font-display text-label uppercase tracking-widest text-brand-silver">
-                {row.key}
-              </td>
-              {toCompare.map((p) => (
-                <td
-                  key={p.slug}
-                  className="border border-brand-border p-4 text-body-sm text-brand-silver"
-                >
+              <td className={STICKY_LABEL_CLASS}>{row.key}</td>
+              {products.map((p) => (
+                <td key={p.slug} className={PRODUCT_COLUMN_CLASS}>
                   {row.get(p)}
                 </td>
               ))}
