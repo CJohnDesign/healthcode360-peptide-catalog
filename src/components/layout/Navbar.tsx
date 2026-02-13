@@ -75,7 +75,7 @@ export function Navbar() {
               <span className={cn("block w-full h-0.5 bg-current transition-transform", mobileOpen && "opacity-0")} />
               <span className={cn("block w-full h-0.5 bg-current transition-transform", mobileOpen && "-rotate-45 -translate-y-1.5")} />
             </div>
-            {items.length > 0 && (
+            {items.length > 0 && !mobileOpen && (
               <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-gold text-brand-black text-caption font-display">
                 {items.length}
               </span>
@@ -107,9 +107,14 @@ export function Navbar() {
               <Link
                 href="/interest-list"
                 onClick={() => setMobileOpen(false)}
-                className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white"
+                className="relative text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white inline-flex items-center"
               >
-                My List {items.length > 0 && `(${items.length})`}
+                My List
+                {items.length > 0 && (
+                  <span className="ml-2 flex h-4 w-4 items-center justify-center rounded-full bg-brand-gold text-brand-black text-caption font-display shrink-0">
+                    {items.length}
+                  </span>
+                )}
               </Link>
             </div>
           </div>
