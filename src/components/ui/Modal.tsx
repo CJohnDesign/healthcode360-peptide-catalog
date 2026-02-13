@@ -27,12 +27,12 @@ export function Modal({ isOpen, onClose, title, children, className }: ModalProp
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 overflow-hidden overscroll-none"
       onClick={onClose}
     >
       <div
         className={cn(
-          "relative w-full max-w-md border border-brand-border bg-brand-black p-8",
+          "relative w-full max-w-md max-h-[90dvh] overflow-y-auto overscroll-contain scroll-touch border border-brand-border bg-brand-black p-6 sm:p-8",
           className
         )}
         onClick={(e) => e.stopPropagation()}

@@ -16,7 +16,7 @@ export function InquirySubmission({
   onCancel,
 }: InquirySubmissionProps) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <section>
         <h4 className="text-label font-display tracking-wider uppercase text-brand-silver mb-3">
           Your Order
@@ -35,21 +35,15 @@ export function InquirySubmission({
           What Happens Next
         </h4>
         <p className="text-body-sm text-brand-silver leading-relaxed">
-          You&apos;re submitting an inquiry for the products above. A member of our team will
-          personally review your order and draft a custom invoice for you within 24 hours. We&apos;ll
-          reach out via the contact info you provide below—no commitment required.
+          We&apos;ll draft your invoice within 24 hours and reach out. No commitment required.
         </p>
       </section>
 
       <section>
-        <h4 className="text-label font-display tracking-wider uppercase text-brand-silver mb-3">
-          Contact Info
-        </h4>
         <EmailCaptureForm
           onSubmit={onSubmit}
           onCancel={onCancel}
           submitLabel="Submit Inquiry"
-          introMessage="Where should we send your invoice? All fields are optional."
         />
       </section>
     </div>

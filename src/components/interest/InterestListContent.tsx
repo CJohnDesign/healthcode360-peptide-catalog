@@ -50,7 +50,7 @@ export function InterestListContent() {
   const canCompare = items.length >= 2;
 
   const ctaBlock = (
-    <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-4">
+    <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-4">
       <ButtonLink
         href="/products"
         variant="secondary"
@@ -97,10 +97,10 @@ export function InterestListContent() {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 min-h-full flex flex-col">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 shrink-0">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 min-h-full flex flex-col">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8 shrink-0">
         <div>
-          <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white">
+          <h1 className="font-display text-2xl sm:text-3xl uppercase tracking-tight text-brand-white">
             My List
           </h1>
           <p className="text-body-sm text-brand-silver mt-2">
@@ -120,7 +120,7 @@ export function InterestListContent() {
         </Button>
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 shrink-0">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8 shrink-0">
         <div className="flex items-center gap-2">
           {items.length >= 2 && (
             <>
@@ -179,7 +179,7 @@ export function InterestListContent() {
               </div>
             ))}
           </div>
-          <div className="mt-12 shrink-0">{ctaBlock}</div>
+          <div className="mt-8 sm:mt-12 shrink-0">{ctaBlock}</div>
         </div>
       )}
 
@@ -188,7 +188,7 @@ export function InterestListContent() {
           <div className="flex-1 min-h-0 overflow-auto">
             <CompareTable products={items} />
           </div>
-          <div className="mt-8 shrink-0">{ctaBlock}</div>
+          <div className="mt-6 sm:mt-8 shrink-0">{ctaBlock}</div>
         </div>
       )}
 
@@ -226,7 +226,15 @@ export function InterestListContent() {
         <p className="text-body-sm text-brand-silver mb-6">
           Your selections will vanish into the void—but you can always add them back. No pressure.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col-reverse sm:flex-row gap-4">
+          <Button
+            type="button"
+            onClick={() => setShowClearConfirm(false)}
+            variant="secondary"
+            size="lg"
+          >
+            Cancel
+          </Button>
           <Button
             type="button"
             onClick={handleClearList}
@@ -236,14 +244,6 @@ export function InterestListContent() {
             iconPosition="left"
           >
             Clear List
-          </Button>
-          <Button
-            type="button"
-            onClick={() => setShowClearConfirm(false)}
-            variant="secondary"
-            size="lg"
-          >
-            Cancel
           </Button>
         </div>
       </Modal>

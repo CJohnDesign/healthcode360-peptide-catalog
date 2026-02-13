@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Send, X } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export interface EmailCaptureData {
@@ -14,7 +14,6 @@ interface EmailCaptureFormProps {
   onSubmit: (data: EmailCaptureData) => void;
   onCancel?: () => void;
   submitLabel?: string;
-  introMessage?: string;
 }
 
 const inputBase =
@@ -24,7 +23,6 @@ export function EmailCaptureForm({
   onSubmit,
   onCancel,
   submitLabel = "Submit Inquiry",
-  introMessage = "Share your contact info so we can follow up. All fields are optional.",
 }: EmailCaptureFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,9 +35,6 @@ export function EmailCaptureForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <p className="text-body-sm text-brand-silver mb-6">
-        {introMessage}
-      </p>
       <div>
         <label htmlFor="name" className="block text-label font-display tracking-wider uppercase text-brand-silver mb-1">
           Name
@@ -79,27 +74,25 @@ export function EmailCaptureForm({
           className={inputBase}
         />
       </div>
-      <div className="flex flex-col sm:flex-row gap-4 pt-4">
+      <div className="pt-6 sm:pt-4 space-y-4">
         <Button
           type="submit"
-          variant="primary"
+          variant="cta"
           size="lg"
           icon={Send}
           iconPosition="right"
+          className="w-full"
         >
           {submitLabel}
         </Button>
         {onCancel && (
-          <Button
+          <button
             type="button"
             onClick={onCancel}
-            variant="secondary"
-            size="lg"
-            icon={X}
-            iconPosition="left"
+            className="block w-full text-center text-caption text-brand-silver-dark hover:text-brand-silver transition-colors py-2"
           >
             Cancel
-          </Button>
+          </button>
         )}
       </div>
     </form>
