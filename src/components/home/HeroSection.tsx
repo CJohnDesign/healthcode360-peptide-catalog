@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import { PHYSICIAN_REVIEW_TAGLINE } from "@/data/copy";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -16,6 +17,9 @@ export function HeroSection() {
         </h1>
         <p className="mt-4 text-body-sm text-brand-silver text-center max-w-md">
           Clinical-grade compounds for weight management, recovery, longevity, and beyond.
+        </p>
+        <p className="mt-2 text-body-sm text-brand-silver text-center max-w-lg">
+          {PHYSICIAN_REVIEW_TAGLINE}
         </p>
         <ButtonLink
           href="/products"

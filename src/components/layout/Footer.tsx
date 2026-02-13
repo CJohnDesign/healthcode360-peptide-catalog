@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PHYSICIAN_REVIEW_FOOTER } from "@/data/copy";
 
 export function Footer() {
   return (
@@ -23,8 +24,8 @@ export function Footer() {
             </Link>
           </nav>
         </div>
-        <p className="mt-8 text-body-sm text-brand-silver-dark text-center">
-          Compounded for use under the supervision of a licensed healthcare provider. Use only as prescribed.
+        <p className="mt-8 text-body-sm text-brand-silver-dark text-center max-w-2xl mx-auto">
+          {PHYSICIAN_REVIEW_FOOTER}
         </p>
       </div>
     </footer>

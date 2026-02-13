@@ -1,6 +1,7 @@
 "use client";
 
 import type { Product } from "@/types";
+import { WHAT_HAPPENS_NEXT } from "@/data/copy";
 import { EmailCaptureForm } from "./EmailCaptureForm";
 import type { EmailCaptureData } from "./EmailCaptureForm";
 
@@ -35,7 +36,7 @@ export function InquirySubmission({
           What Happens Next
         </h4>
         <p className="text-body-sm text-brand-silver leading-relaxed">
-          We&apos;ll draft your invoice within 24 hours and reach out. No commitment required.
+          {WHAT_HAPPENS_NEXT}
         </p>
       </section>
 

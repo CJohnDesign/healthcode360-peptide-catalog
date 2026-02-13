@@ -1,8 +1,9 @@
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { PHYSICIAN_REVIEW_PROVIDER_GUIDED } from "@/data/copy";
 
 const props = [
   { title: "Clinical Grade", desc: "Pharmacy-compounded to clinical standards." },
-  { title: "Provider Guided", desc: "Use under the supervision of licensed healthcare providers." },
+  { title: "Provider Guided", desc: PHYSICIAN_REVIEW_PROVIDER_GUIDED },
   { title: "Precision Formulated", desc: "Consistent dosing, clear protocols." },
 ];
 

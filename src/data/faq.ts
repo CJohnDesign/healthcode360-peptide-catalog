@@ -1,4 +1,8 @@
 import type { FAQ } from "@/types";
+import {
+  PHYSICIAN_REVIEW_FAQ_QUESTION,
+  PHYSICIAN_REVIEW_FAQ_ANSWER,
+} from "@/data/copy";
 
 export const faqItems: FAQ[] = [
   { id: "1", question: "What are peptides?", answer: "Peptides are short chains of amino acids that support various bodily functions. Therapeutic peptides can support weight management, recovery, hormonal balance, and longevity." },
@@ -8,4 +12,5 @@ export const faqItems: FAQ[] = [
   { id: "5", question: "How do I reconstitute peptides?", answer: "Each product specifies a Bacteriostatic Water volume (e.g., 2 mL) for reconstitution. Draw the correct amount, inject into the vial, swirl gently. Do not shake." },
   { id: "6", question: "Can I stack peptides?", answer: "Some peptides stack well (e.g., AOD 9604 with GLP-1). Always consult your provider before combining peptides." },
   { id: "7", question: "Are these compounds FDA approved?", answer: "Peptides are compounded for use under the supervision of a licensed healthcare provider. Use only as prescribed. Individual results may vary." },
+  { id: "8", question: PHYSICIAN_REVIEW_FAQ_QUESTION, answer: PHYSICIAN_REVIEW_FAQ_ANSWER },
 ];

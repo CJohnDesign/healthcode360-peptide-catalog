@@ -5,6 +5,11 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { List, LayoutGrid, Send, ArrowRight, ShoppingBag, Trash2, RotateCcw } from "lucide-react";
 import { useInterestList } from "@/context/InterestListContext";
+import {
+  PHYSICIAN_REVIEW_EMPTY_STATE,
+  PHYSICIAN_REVIEW_HEADER_SUBTITLE,
+  SUCCESS_MODAL_MESSAGE,
+} from "@/data/copy";
 import { InterestListItem } from "@/components/interest/InterestListItem";
 import { Modal } from "@/components/ui/Modal";
 import { CompareTable } from "@/components/interest/CompareTable";
@@ -80,7 +85,10 @@ export function InterestListContent() {
         <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white mb-4">
           My List
         </h1>
-        <p className="text-body-sm text-brand-silver mb-8">
+        <p className="text-body-sm text-brand-silver mb-4">
+          {PHYSICIAN_REVIEW_EMPTY_STATE}
+        </p>
+        <p className="text-body-sm text-brand-silver-dark mb-8">
           Your list is empty. Add products from the catalog to inquire about them.
         </p>
         <ButtonLink
@@ -104,7 +112,7 @@ export function InterestListContent() {
             My List
           </h1>
           <p className="text-body-sm text-brand-silver mt-2">
-            Review your selections and submit an inquiry. Switch between list and compare views.
+            {PHYSICIAN_REVIEW_HEADER_SUBTITLE}
           </p>
         </div>
         <Button
@@ -207,7 +215,7 @@ export function InterestListContent() {
 
       <Modal isOpen={showSuccess} onClose={handleCloseSuccess} title="Inquiry Sent">
         <p className="text-body-sm text-brand-silver">
-          Your inquiry has been received. We&apos;ll personally draft your invoice and reach out within 24 hours.
+          {SUCCESS_MODAL_MESSAGE}
         </p>
         <Link
           href="/products"
