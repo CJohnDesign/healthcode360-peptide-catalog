@@ -67,7 +67,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-brand-white touch-manipulation"
+            className="md:hidden relative min-h-[44px] min-w-[44px] flex items-center justify-center text-brand-white touch-manipulation"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-4 flex flex-col justify-center gap-1">
@@ -75,6 +75,11 @@ export function Navbar() {
               <span className={cn("block w-full h-0.5 bg-current transition-transform", mobileOpen && "opacity-0")} />
               <span className={cn("block w-full h-0.5 bg-current transition-transform", mobileOpen && "-rotate-45 -translate-y-1.5")} />
             </div>
+            {items.length > 0 && (
+              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-gold text-brand-black text-caption font-display">
+                {items.length}
+              </span>
+            )}
           </button>
         </div>
         {mobileOpen && (
