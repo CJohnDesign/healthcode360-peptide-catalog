@@ -1,5 +1,5 @@
 import { products } from "@/data/products";
-import { PHYSICIAN_REVIEW_PRODUCTS_INTRO } from "@/data/copy";
+import { PHYSICIAN_REVIEW_PRODUCTS_INTRO, PROTOCOL_STATEMENT } from "@/data/copy";
 import { FilterableProductGrid } from "@/components/products/FilterableProductGrid";
 
 export default function ProductsPage() {
@@ -8,8 +8,11 @@ export default function ProductsPage() {
       <h1 className="font-display text-3xl uppercase tracking-tight text-brand-white mb-4">
         Product Catalog
       </h1>
-      <p className="text-body-sm text-brand-silver mb-8 max-w-2xl">
+      <p className="text-body-sm text-brand-silver mb-4 max-w-2xl">
         {PHYSICIAN_REVIEW_PRODUCTS_INTRO}
+      </p>
+      <p className="text-body-sm text-brand-silver-dark mb-8 max-w-2xl">
+        {PROTOCOL_STATEMENT}
       </p>
       <FilterableProductGrid products={products} />
     </div>

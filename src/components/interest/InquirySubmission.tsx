@@ -1,7 +1,7 @@
 "use client";
 
 import type { Product } from "@/types";
-import { WHAT_HAPPENS_NEXT } from "@/data/copy";
+import { WHAT_HAPPENS_NEXT, PROTOCOL_STATEMENT } from "@/data/copy";
 import { EmailCaptureForm } from "./EmailCaptureForm";
 import type { EmailCaptureData } from "./EmailCaptureForm";
 
@@ -36,6 +36,9 @@ export function InquirySubmission({
           What Happens Next
         </h4>
         <p className="text-body-sm text-brand-silver leading-relaxed">
+          {PROTOCOL_STATEMENT}
+        </p>
+        <p className="mt-2 text-body-sm text-brand-silver-dark leading-relaxed">
           {WHAT_HAPPENS_NEXT}
         </p>
       </section>

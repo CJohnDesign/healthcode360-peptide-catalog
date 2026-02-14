@@ -7,9 +7,9 @@ export default function KnowledgePage() {
         Knowledge Base
       </h1>
       <p className="text-body-sm text-brand-silver mb-12 max-w-2xl">
-        FAQ, educational articles, and a glossary of peptide terms.
+        FAQ, educational articles, protocols, and a glossary of peptide terms.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <Link
           href="/knowledge/faq"
           className="block border border-brand-border p-8 hover:border-brand-grey-500 transition-colors"
@@ -26,6 +26,15 @@ export default function KnowledgePage() {
           <h2 className="font-display text-lg uppercase tracking-wider text-brand-white">Articles</h2>
           <p className="mt-2 text-body-sm text-brand-silver">
             Educational content on how peptides work and best practices.
+          </p>
+        </Link>
+        <Link
+          href="/knowledge/protocols"
+          className="block border border-brand-border p-8 hover:border-brand-grey-500 transition-colors"
+        >
+          <h2 className="font-display text-lg uppercase tracking-wider text-brand-white">Protocols</h2>
+          <p className="mt-2 text-body-sm text-brand-silver">
+            Reconstitution, storage, and use of peptides, nutriments, and Lathmized NAD+.
           </p>
         </Link>
         <Link

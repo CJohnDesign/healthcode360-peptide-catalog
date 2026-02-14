@@ -5,6 +5,10 @@ export interface ProductVariant {
   schedule: string;
   /** Bacteriostatic water volume for reconstitution, e.g. "2 mL" */
   reconstitutionVolume?: string;
+  /** Price in dollars (e.g. 165) */
+  price?: number;
+  /** Membership price in dollars */
+  membershipPrice?: number;
 }
 
 /** Standard IFU content shared across products when not overridden */
@@ -32,6 +36,10 @@ export interface Product {
   image: string;
   shortDescription: string;
   fullDescription: string;
+  /** Default price when no variant-level price (e.g. single-variant nutriments) */
+  price?: number;
+  /** Default membership price when no variant-level price */
+  membershipPrice?: number;
   /** Medication class from IFU, e.g. "GLP-1 Receptor Agonist" */
   medicationClass: string;
   /** Full indications from IFU */

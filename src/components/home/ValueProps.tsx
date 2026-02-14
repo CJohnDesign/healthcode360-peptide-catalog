@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PHYSICIAN_REVIEW_PROVIDER_GUIDED } from "@/data/copy";
 
@@ -22,6 +23,14 @@ export function ValueProps() {
             </div>
           ))}
         </div>
+        <p className="mt-12 text-center">
+          <Link
+            href="/contact"
+            className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white transition-colors"
+          >
+            Contact Us
+          </Link>
+        </p>
       </div>
     </section>
   );

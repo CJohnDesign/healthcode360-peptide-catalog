@@ -3,11 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Home } from "lucide-react";
 import { Logo } from "./Logo";
 import { useInterestList } from "@/context/InterestListContext";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
+const navLinks: { href: string; label: string; icon?: typeof Home }[] = [
+  { href: "/", label: "Home", icon: Home },
   { href: "/products", label: "Catalog" },
   { href: "/categories", label: "Categories" },
   { href: "/knowledge", label: "Knowledge" },
@@ -43,15 +45,20 @@ export function Navbar() {
             />
           </form>
           <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white transition-colors flex items-center gap-1.5"
+                  aria-label={link.label === "Home" ? "Go to home page" : undefined}
+                >
+                  {Icon && <Icon className="w-4 h-4" aria-hidden />}
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href="/interest-list"
               className="relative text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white transition-colors"
@@ -94,16 +101,20 @@ export function Navbar() {
               />
             </form>
             <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-body-sm font-display tracking-wider uppercase text-brand-silver hover:text-brand-white flex items-center gap-2"
+                  >
+                    {Icon && <Icon className="w-4 h-4" aria-hidden />}
+                    {link.label}
+                  </Link>
+                );
+              })}
               <Link
                 href="/interest-list"
                 onClick={() => setMobileOpen(false)}

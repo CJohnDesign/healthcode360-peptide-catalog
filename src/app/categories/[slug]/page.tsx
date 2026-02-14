@@ -4,6 +4,7 @@ import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { BMICalculator } from "@/components/weight/BMICalculator";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));
@@ -14,6 +15,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   if (!category) notFound();
 
   const categoryProducts = products.filter((p) => p.categorySlug === params.slug);
+  const isWeightManagement = params.slug === "weight-management";
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -23,7 +25,8 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
           { label: category.name },
         ]}
       />
-      <div className="mt-6">
+      {isWeightManagement && <BMICalculator />}
+      <div className={isWeightManagement ? undefined : "mt-6"}>
         <PlaceholderImage src={category.image} aspectRatio="16/9" label={category.name} />
       </div>
       <div className="mt-8">

@@ -16,3 +16,6 @@ npm-debug.log*
 # OS
 .DS_Store
 .vercel
+
+# Downloaded PDFs (extracted content goes to docs/*.md)
+docs/downloads/

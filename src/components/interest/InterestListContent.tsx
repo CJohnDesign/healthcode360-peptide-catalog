@@ -8,6 +8,7 @@ import { useInterestList } from "@/context/InterestListContext";
 import {
   PHYSICIAN_REVIEW_EMPTY_STATE,
   PHYSICIAN_REVIEW_HEADER_SUBTITLE,
+  PROTOCOL_STATEMENT,
   SUCCESS_MODAL_MESSAGE,
 } from "@/data/copy";
 import { InterestListItem } from "@/components/interest/InterestListItem";
@@ -88,6 +89,9 @@ export function InterestListContent() {
         <p className="text-body-sm text-brand-silver mb-4">
           {PHYSICIAN_REVIEW_EMPTY_STATE}
         </p>
+        <p className="text-body-sm text-brand-silver-dark mb-4 max-w-xl mx-auto">
+          {PROTOCOL_STATEMENT}
+        </p>
         <p className="text-body-sm text-brand-silver-dark mb-8">
           Your list is empty. Add products from the catalog to inquire about them.
         </p>
@@ -113,6 +117,9 @@ export function InterestListContent() {
           </h1>
           <p className="text-body-sm text-brand-silver mt-2">
             {PHYSICIAN_REVIEW_HEADER_SUBTITLE}
+          </p>
+          <p className="text-body-sm text-brand-silver-dark mt-1">
+            {PROTOCOL_STATEMENT}
           </p>
         </div>
         <Button

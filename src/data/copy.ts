@@ -34,3 +34,7 @@ export const PHYSICIAN_REVIEW_FAQ_QUESTION = "Why can't I check out directly?";
 
 export const PHYSICIAN_REVIEW_FAQ_ANSWER =
   "All peptides require physician review before purchase. This portal lets you shop and submit your selections to our doctors. Once they've reviewed your list, we'll create your invoice and reach out—typically within 24 hours. This ensures every order is appropriate for your care.";
+
+/** Protocol statement for My List, inquiry flow, and footer. */
+export const PROTOCOL_STATEMENT =
+  "All supplements require physician review prior to purchase. You will receive an invoice for your product request within 24 hours of physician review. In the event our provider needs to contact you with your request, please provide your preferred contact method.";

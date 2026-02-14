@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/Badge";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { InterestButton } from "@/components/interest/InterestButton";
 import { Button } from "@/components/ui/Button";
+import { formatPrice } from "@/lib/formatPrice";
+import { getVariantPrice } from "@/lib/productPrice";
 import type { Product } from "@/types";
 import { IFU_DEFAULTS } from "@/types";
 
@@ -46,6 +48,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
             aspectRatio="16/9"
             label={product.name}
             priority
+            unoptimized
             sizes="(max-width: 1024px) 100vw, 66vw"
             className="mb-6"
           />
@@ -87,6 +90,29 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
           )}
         </div>
         <div className="space-y-6">
+          {(variant.price !== undefined || variant.membershipPrice !== undefined) && (
+            <div>
+              <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
+                Price
+              </h3>
+              <p className="text-body-sm text-brand-white font-display">
+                {typeof variant.price === "number" && typeof variant.membershipPrice === "number" ? (
+                  <>
+                    <span className="text-brand-silver line-through mr-2">{formatPrice(variant.price)}</span>
+                    <span>{formatPrice(variant.membershipPrice)}</span>
+                    <span className="ml-1 text-caption text-brand-silver">member</span>
+                  </>
+                ) : (
+                  <>
+                    {formatPrice(getVariantPrice(variant) ?? 0)}
+                    {variant.membershipPrice !== undefined && (
+                      <span className="ml-1 text-caption text-brand-silver">member</span>
+                    )}
+                  </>
+                )}
+              </p>
+            </div>
+          )}
           {product.variants.length > 1 && (
             <div>
               <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
@@ -114,11 +140,13 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
             <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Medication Details
             </h3>
-            <p className="text-caption text-brand-silver-dark">{variant.vialSize} vial</p>
-            <p className="mt-1 text-caption text-brand-silver-dark">
-              Concentration: {variant.concentration}
-            </p>
-            {variant.reconstitutionVolume && (
+            <p className="text-caption text-brand-silver-dark">{variant.vialSize}</p>
+            {variant.concentration && variant.concentration !== "N/A" && (
+              <p className="mt-1 text-caption text-brand-silver-dark">
+                Concentration: {variant.concentration}
+              </p>
+            )}
+            {variant.reconstitutionVolume && variant.reconstitutionVolume !== "N/A" && variant.reconstitutionVolume !== "Consult provider" && (
               <p className="mt-1 text-caption text-brand-silver-dark">
                 Bacteriostatic Water {variant.reconstitutionVolume}
               </p>
@@ -141,30 +169,34 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               </p>
             )}
           </div>
-          <div>
-            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
-              Injection Technique
-            </h3>
-            <ul className="space-y-1">
-              {(product.injectionTechnique ?? IFU_DEFAULTS.injectionTechnique).map((step) => (
-                <li key={step} className="text-caption text-brand-silver-dark flex items-start gap-2">
-                  <span className="text-brand-silver-dark shrink-0">•</span> {step}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
-              Missed Dose
-            </h3>
-            <ul className="space-y-1">
-              {(product.missedDose ?? IFU_DEFAULTS.missedDose).map((item) => (
-<li key={item} className="text-caption text-brand-silver-dark flex items-start gap-2">
-                <span className="text-brand-silver-dark shrink-0">•</span> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {(product.administrationRoute === "Subcutaneous" || product.administrationRoute === "Intramuscular" || product.administrationRoute?.includes("IV")) && (
+            <div>
+              <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
+                Injection Technique
+              </h3>
+              <ul className="space-y-1">
+                {(product.injectionTechnique ?? IFU_DEFAULTS.injectionTechnique).map((step) => (
+                  <li key={step} className="text-caption text-brand-silver-dark flex items-start gap-2">
+                    <span className="text-brand-silver-dark shrink-0">•</span> {step}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {product.administrationRoute === "Subcutaneous" && (
+            <div>
+              <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
+                Missed Dose
+              </h3>
+              <ul className="space-y-1">
+                {(product.missedDose ?? IFU_DEFAULTS.missedDose).map((item) => (
+                  <li key={item} className="text-caption text-brand-silver-dark flex items-start gap-2">
+                    <span className="text-brand-silver-dark shrink-0">•</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div>
             <h3 className="font-display text-label uppercase tracking-widest text-brand-silver mb-2">
               Storage & Handling

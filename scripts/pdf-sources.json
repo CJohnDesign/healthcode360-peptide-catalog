@@ -1,0 +1,100 @@
+{
+  "downloadDir": "docs/downloads",
+  "filenameMatches": {
+    "A Guard Sales Sheet.pdf": "A_Guard.pdf",
+    "AG Guard Sales Sheet.pdf": "AG_Guard.pdf",
+    "B Guard Sales Sheet_12.5.2022.pdf": "B_Guard.pdf",
+    "BP Guard Sales Sheet.pdf": "BP_Guard.pdf",
+    "C Guard Sales Sheet_R1.pdf": "C_Guard.pdf",
+    "CL Guard Sales Sheet.pdf": "CL_Guard.pdf",
+    "D Guard Sales Sheet_12.5.2022.pdf": "D_Guard.pdf",
+    "DP Guard Sales Sheet (1).pdf": "DP_Guard.pdf",
+    "E Guard Sales Sheet.pdf": "E_Guard.pdf",
+    "H Guard Sales Sheet 12.5.2022.pdf": "H_Guard.pdf",
+    "J Guard Sales Sheet.pdf": "J_Guard.pdf",
+    "L Guard Sales Sheet_12.5.2022.pdf": "L_Guard.pdf",
+    "M Guard Sales Sheet.pdf": "M_Guard.pdf",
+    "P Guard Sales Sheet.pdf": "P_Guard.pdf",
+    "R Guard Sales Sheet.pdf": "R_Guard.pdf",
+    "S Guard Sales Sheet.pdf": "S_Guard.pdf",
+    "T Guard Sales Sheet.pdf": "T_Guard.pdf",
+    "U Guard Sales Sheet_final 12.05.2022.pdf": "U_Guard.pdf",
+    "V Guard Sales Sheet.pdf": "V_Guard.pdf",
+    "W Guard Sales Sheet.pdf": "W_Guard.pdf",
+    "X Guard Sales Sheet.pdf": "X_Guard.pdf",
+    "Y Guard Sales Sheet.pdf": "Y_Guard.pdf",
+    "Z Guard Sales Sheet.pdf": "Z_Guard.pdf",
+    "AlphaBioMed mixing instructions-lite .pdf": "AlphaBioMed_mixing_instructions.pdf",
+    "HC360 LNAD Protocol_.pdf": "HC360_LNAD_Protocol.pdf",
+    "NUTRIMENTS and PlanetOne 2025 SWP - SRP PRICE LIST rev 10.13.25.pdf": "NUTRIMENTS_PlanetOne_2025_Price_List.pdf",
+    "15 Day Total Body Cleanse Sales Sheet.pdf": "15_Day_Total_Body_Cleanse_Sales.pdf",
+    "15 Day Total Body Cleanse - FAQ.pdf": "15_Day_Total_Body_Cleanse_FAQ.pdf",
+    "24038-1 PRC-HGH -Amino Complex 1oz.pdf": "PRC-HGH_Amino_Complex.pdf",
+    "Herbal Bismol Sales Sheet.pdf": "Herbal_Bismol.pdf",
+    "Circulation Flow Sales Sheet.pdf": "Circulation_Flow.pdf",
+    "CBD Sales Sheet.pdf": "CBD.pdf",
+    "Boost Sales Sheet.pdf": "Boost.pdf"
+  },
+  "sources": [
+    {
+      "id": "1S1qX3AnGRL1n3XwRPn96v5WbWBDcQ9j3",
+      "filename": "AlphaBioMed_mixing_instructions.pdf",
+      "markdown": "docs/alphabiomed-mixing/AlphaBioMed_Mixing_Instructions.md"
+    },
+    {
+      "id": "1Xe8J1BUQpLFFDqxotEPiHPVyQsmZmXqM",
+      "filename": "HC360_LNAD_Protocol.pdf",
+      "markdown": "docs/hc360-lnad/HC360_LNAD_Protocol.md"
+    },
+    {
+      "id": "1YCjX018PZJ4gfsc-ftt4Wr2Ia7jZNX0f",
+      "filename": "NUTRIMENTS_PlanetOne_2025_Price_List.pdf",
+      "markdown": "docs/nutriments/NUTRIMENTS_PRICE_LIST.md"
+    },
+    {
+      "id": "1NZ2BvwKBbUaU2FHMYHQbC3AQJciz6FeZ",
+      "filename": "15_Day_Total_Body_Cleanse_Sales.pdf",
+      "markdown": "docs/nutriments/15_Day_Total_Body_Cleanse.md",
+      "appendToExisting": true
+    },
+    {
+      "id": "1DDXgmJ5t2wKqEI4ROhum2lkC-7DL8Bf0",
+      "filename": "15_Day_Total_Body_Cleanse_FAQ.pdf",
+      "markdown": "docs/nutriments/15_Day_Total_Body_Cleanse.md",
+      "appendToExisting": true,
+      "sectionHeader": "## FAQ"
+    },
+    {
+      "id": "1Ae8PnWWc90KuXW9see30mlk97yo3MZ97",
+      "filename": "PRC-HGH_Amino_Complex.pdf",
+      "markdown": "docs/nutriments/products/PRC-HGH_Amino_Complex.md"
+    },
+    { "id": "1SuzD6L0Wcqn9FwW9btT23hrwpa7tMpRB", "filename": "A_Guard.pdf", "markdown": "docs/nutriments/products/A_Guard.md" },
+    { "id": "1XeKFmFfWHa67G_sdr-AU908TPHzcCkOC", "filename": "AG_Guard.pdf", "markdown": "docs/nutriments/products/AG_Guard.md" },
+    { "id": "1UC7To6vD2y950_TYEtD0RjpTvNLUlUVU", "filename": "B_Guard.pdf", "markdown": "docs/nutriments/products/B_Guard.md" },
+    { "id": "1OmFvNNYaY6HSMHopiIA2R1dn-hfnmKY3", "filename": "BP_Guard.pdf", "markdown": "docs/nutriments/products/BP_Guard.md" },
+    { "id": "1omKDCGIlGwe0Wg9bHW8Yi-SyLp4iQot5", "filename": "C_Guard.pdf", "markdown": "docs/nutriments/products/C_Guard.md" },
+    { "id": "17oYG3Qv3YFmB99FeCxeFipWMLRb5rleQ", "filename": "CL_Guard.pdf", "markdown": "docs/nutriments/products/CL_Guard.md" },
+    { "id": "1NZAjg2R-UlbbqBoKliBGJ0g6V9ggQxB4", "filename": "D_Guard.pdf", "markdown": "docs/nutriments/products/D_Guard.md" },
+    { "id": "1OmNxwaONU89ANXBSW6D5zkbRC-sclWig", "filename": "DP_Guard.pdf", "markdown": "docs/nutriments/products/DP_Guard.md" },
+    { "id": "135AhWpJTli2AZsgxV_BI4FcAMmZRH9Wz", "filename": "E_Guard.pdf", "markdown": "docs/nutriments/products/E_Guard.md" },
+    { "id": "1syVqes31EFqT3MCs1GuhZIFhfECkuuCP", "filename": "H_Guard.pdf", "markdown": "docs/nutriments/products/H_Guard.md" },
+    { "id": "1sXnxhKzuU_8Fq8iPintJpZFiSYrOX6Pa", "filename": "J_Guard.pdf", "markdown": "docs/nutriments/products/J_Guard.md" },
+    { "id": "1Z7MRWtotcLcp7VKR1RBdp9t48nU5NWEE", "filename": "L_Guard.pdf", "markdown": "docs/nutriments/products/L_Guard.md" },
+    { "id": "15_I0Bb4gBy5Jm0gNYTU-tTRf2jOibIyD", "filename": "M_Guard.pdf", "markdown": "docs/nutriments/products/M_Guard.md" },
+    { "id": "1d9YWcExQbWnBryGrgTp7jgyaeKQdHVFx", "filename": "P_Guard.pdf", "markdown": "docs/nutriments/products/P_Guard.md" },
+    { "id": "19u2XtZQLGsZaXg1izOzT9fXPEE_Drfc6", "filename": "R_Guard.pdf", "markdown": "docs/nutriments/products/R_Guard.md" },
+    { "id": "1-Kq7gYx4NPAZr_8uY2rOAJY8RFpKZHHS", "filename": "S_Guard.pdf", "markdown": "docs/nutriments/products/S_Guard.md" },
+    { "id": "1VxLGziw_zeO2omzHV1WYxRVmCOCriQwX", "filename": "T_Guard.pdf", "markdown": "docs/nutriments/products/T_Guard.md" },
+    { "id": "1MfPqGZJlYMljqvLdhuz6wkBfvn2HHBZ_", "filename": "U_Guard.pdf", "markdown": "docs/nutriments/products/U_Guard.md" },
+    { "id": "1AqAX_mxqLMQWqrMxmWKql4Au6TOWGBQq", "filename": "V_Guard.pdf", "markdown": "docs/nutriments/products/V_Guard.md" },
+    { "id": "1i73uvtTVJDdyBeWuJb6ibA29Bog2W5av", "filename": "W_Guard.pdf", "markdown": "docs/nutriments/products/W_Guard.md" },
+    { "id": "1eqF9ddwH5MkmGaKu0Whibw8dTq1KLwvA", "filename": "X_Guard.pdf", "markdown": "docs/nutriments/products/X_Guard.md" },
+    { "id": "1SOlvsH_dGCw7FFqvlq79CY2zGqnk2P8R", "filename": "Y_Guard.pdf", "markdown": "docs/nutriments/products/Y_Guard.md" },
+    { "id": "1sQeW1J_YLjsuuUqqmTaP8RkjrVklo0lG", "filename": "Z_Guard.pdf", "markdown": "docs/nutriments/products/Z_Guard.md" },
+    { "id": "17bAdL1G619RGnjzqTKkKwJkqs4PYfBoM", "filename": "Herbal_Bismol.pdf", "markdown": "docs/nutriments/products/Herbal_Bismol.md" },
+    { "id": "1CBnLjMsgO7BXV2dvbiL0kBbgOcyLScpo", "filename": "Circulation_Flow.pdf", "markdown": "docs/nutriments/products/Circulation_Flow.md" },
+    { "id": "1iPvR9owUnwYBW2k9uN0Enrwm9oD4qqxJ", "filename": "CBD.pdf", "markdown": "docs/nutriments/products/CBD.md" },
+    { "id": "18k11RHyxVF720snkf6h5E3yhihKXHSj3", "filename": "Boost.pdf", "markdown": "docs/nutriments/products/Boost.md" }
+  ]
+}

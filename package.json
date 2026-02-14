@@ -9,8 +9,13 @@
     "lint": "next lint",
     "generate:sema-image": "node --env-file=.env scripts/generate-sema-image.mjs",
     "generate:product-images": "node --env-file=.env scripts/generate-all-product-images.mjs",
+    "generate:product-images-v2": "node --env-file=.env scripts/generate-all-product-images-v2.mjs",
+    "verify:product-images": "node scripts/verify-product-images.mjs",
+    "generate:image-manifest": "node scripts/generate-image-manifest.mjs",
     "generate:lifestyle-images": "node --env-file=.env scripts/generate-lifestyle-images.mjs",
     "generate:og-image": "node --env-file=.env scripts/generate-og-image.mjs",
+    "download:pdfs": "node scripts/download-pdfs.mjs",
+    "extract:pdfs": "node scripts/extract-pdf-content.mjs",
     "deploy": "vercel --prod",
     "deploy:preview": "vercel"
   },
@@ -22,15 +27,16 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "vercel": "^39.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "14.2.18",
+    "pdf-parse": "^2.4.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.14",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^39.0.0"
   }
 }

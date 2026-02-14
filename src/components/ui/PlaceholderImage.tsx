@@ -17,6 +17,8 @@ interface PlaceholderImageProps {
   sizes?: string;
   /** Preload above-the-fold images for faster LCP */
   priority?: boolean;
+  /** Skip Next.js optimization — faster for API-served images */
+  unoptimized?: boolean;
   className?: string;
 }
 
@@ -62,9 +64,11 @@ export function PlaceholderImage({
   context,
   sizes,
   priority = false,
+  unoptimized = false,
   className,
 }: PlaceholderImageProps) {
   const [imageError, setImageError] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const showRealImage = src && !imageError;
 
   const aspectClassMap = {
@@ -91,9 +95,14 @@ export function PlaceholderImage({
           src={src}
           alt={label || ""}
           fill
-          className="object-cover"
+          className={cn(
+            "object-cover transition-opacity duration-300 ease-out",
+            loaded ? "opacity-100" : "opacity-0"
+          )}
           sizes={sizes}
           priority={priority}
+          unoptimized={unoptimized}
+          onLoad={() => setLoaded(true)}
           onError={() => setImageError(true)}
         />
       </div>
